@@ -1,0 +1,56 @@
+﻿namespace = otto_man_event
+
+otto_man_event.1 = {
+	type = country_event
+	placement = ROOT
+
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_capitalists_meeting.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/capitalists_meeting"
+
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+	
+	title = otto_man_event.1.t
+	desc = otto_man_event.1.d
+	flavor = otto_man_event.1.f
+	
+	duration = 3
+	
+	trigger = {
+	}
+	
+	option = {
+		name = otto_man_event.1.a
+		default_option = yes
+		change_tag = ot9
+		
+	}
+	option = {
+		name = otto_man_event.2.a
+		default_option = no
+		s:STATE_EASTERN_THRACE = {
+			 region_state:X24 = {
+				create_building = {
+					building = "building_iron_mine"
+					level = 5
+					reserves = 1
+					activate_production_methods = { "pmg_mining_equipment_building_iron_mine" }
+				}
+				create_building = {
+					building = "building_tooling_workshops"
+					level = 5
+					reserves = 1
+					activate_production_methods = { "pmg_base_building_tooling_workshops" }
+				}
+		
+				}
+			}
+		
+	}
+}
+
+
+	

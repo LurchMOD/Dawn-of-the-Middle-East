@@ -1,0 +1,61 @@
+namespace = otto_man_ai_event
+
+otto_man_ai_event.1 = {
+	type = country_event
+	placement = ROOT
+
+	event_image = {
+		video = "gfx/event_pictures/europenorthamerica_capitalists_meeting.bk2"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/europenorthamerica/capitalists_meeting"
+
+	icon = "gfx/interface/icons/event_icons/event_military.dds"
+	
+	title = otto_man_ai_event.1.t
+	desc = otto_man_ai_event.1.d
+	flavor = otto_man_ai_event.1.f
+	
+	duration = 3
+	
+	trigger = {
+	c:X24 = {
+			is_player = no
+		}
+	current_game_date = 1301.1.1
+	}
+	
+	option = {
+		name = otto_man_ai_event.1.a
+		default_option = yes
+		ai_chance = 100
+		c:X24 = {
+		create_diplomatic_play = {
+			name = The_War_For_Anatolia
+		
+			target_state = s:STATE_HUDAVENDIGAR.region_state:X23
+			
+			war = yes
+			
+			type = dp_annex_war
+
+			add_war_goal = {
+				holder = c:X24
+				type = conquer_state
+				target_state = s:STATE_AYDIN.region_state:X23
+			}
+			add_war_goal = {
+				holder = c:X24
+				type = conquer_state
+				target_state = s:STATE_EAST_AEGEAN_ISLANDS.region_state:X23
+			}
+			add_war_goal = {
+				holder = c:X24
+				type = conquer_state
+				target_state = s:STATE_KONYA.region_state:X23
+			}
+		}			
+	}
+	}
+	
